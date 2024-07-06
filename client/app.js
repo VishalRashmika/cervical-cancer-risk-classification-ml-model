@@ -41,3 +41,12 @@ function onPageLoad() {
 }
 
 window.onload = onPageLoad;
+
+/*
+age
+no_sex_partners
+first_sex_intercourse
+no_pregnancies
+smokes
+smokes_year
+*/
