@@ -7,12 +7,11 @@ app = Flask(__name__)
 def predict_home_price():
     age = float(request.form['t_age'])
     no_sex_partners = float(request.form['t_no_sex_partners'])
-    first_sex_intercourse = float(request.form['uifirst_sex_intercourse'])
-    no_pregnancies = float(request.form['uino_pregnancies'])
-    smokes = float(request.form['uismokes'])
-    smokes_year = float(request.form['uismokes_year'])
+    first_sex_intercourse = float(request.form['t_first_sex_intercourse'])
+    no_pregnancies = float(request.form['t_no_pregnancies'])
+    smokes = float(request.form['t_smokes'])
+    smokes_year = float(request.form['t_smokes_year'])
 
-    print("Wd")
     response = jsonify({
         'prediction': int(util.get_est_prediction(age,no_sex_partners,first_sex_intercourse,no_pregnancies,smokes,smokes_year)[0])
     })
@@ -21,6 +20,6 @@ def predict_home_price():
     return response
 
 if __name__ == "__main__":
-    print("Starting Python Flask Server For Diabetes Pediction...")
+    print("Starting Python Flask Server For Cervical Cancer Pediction...")
     util.load_saved_artifacts()
     app.run()
