@@ -1,27 +1,23 @@
 function onClickedPrediction() {
   console.log("Prediction button clicked");
-  var Pregnancies = document.getElementById("uipregnancies")
-  var Glucose = document.getElementById("uiglucose")
-  var BloodPressure = document.getElementById("uibloodpressure")
-  var SkinThickness = document.getElementById("uiskinthickness")
-  var Insulin = document.getElementById("uiinsulin")
-  var BMI = document.getElementById("uibmi")
-  var DiabetesPedigreeFunction = document.getElementById("uiDPF")
-  var Age = document.getElementById("uiage")
+  var age = document.getElementById("uiage")
+  var no_sex_partners = document.getElementById("uino_sex_partners")
+  var first_sex_intercourse = document.getElementById("uifirst_sex_intercourse")
+  var no_pregnancies = document.getElementById("uino_pregnancies")
+  var smokes = document.getElementById("uismokes")
+  var smokes_year = document.getElementById("uismokes_year")
 
   var estPrediction = document.getElementById("uiPrediction");
 
-  var url = "http://127.0.0.1:5000/predict_diabetes";
+  var url = "http://127.0.0.1:5000/predict_cervical_cancer";
 
   $.post(url, {
-      t_Pregnancies: parseFloat(Pregnancies.value),
-      t_Glucose: parseFloat(Glucose.value),
-      t_BloodPressure: parseFloat(BloodPressure.value),
-      t_SkinThickness: parseFloat(SkinThickness.value),
-      t_Insulin: parseFloat(Insulin.value),
-      t_BMI: parseFloat(BMI.value),
-      t_DiabetesPedigreeFunction: parseFloat(DiabetesPedigreeFunction.value),
-      t_Age: parseFloat(Age.value)
+      t_age : parseFloat(age.value),
+      t_no_sex_partners : parseFloat(no_sex_partners.value),
+      t_first_sex_intercourse : parseFloat(first_sex_intercourse.value),
+      t_no_pregnancies : parseFloat(no_pregnancies.value),
+      t_smokes : parseFloat(smokes.value),
+      t_smokes_year : parseFloat(smokes_year.value)
   },function(data, status) {
       console.log(data.est_prediction);
       var prediction = data.prediction;
