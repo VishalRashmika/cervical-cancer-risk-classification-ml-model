@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Prediction</title>
+	<center><h1>Diabetes Prediction</h1></center>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+	<link rel="stylesheet" href="app.css">
+	<link rel="icon" href="./logo.png" width="10px" type="image/icon type">
+
+</head>
+<body>
+<div class="img"></div>
+<center>
+	<img src="./logo.png" alt="logo" width="100px">
+</center>
+<form class="form">
+	<!-- 'Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin',
+       'BMI', 'DiabetesPedigreeFunction', 'Age', 'Outcome'] -->
+	<center><h2>Pregnancies</h2></center>
+    <Center><input class="area"  type="text" id="uipregnancies" class="floatLabel" name="Squareft" value="0" placeholder="Enter Value"></Center>
+	<center><h2>Glucose</h2></center>
+    <Center><input class="area"  type="text" id="uiglucose" class="floatLabel" name="Squareft" value="0" placeholder="Enter Value"></Center>
+</form>
+<form class="form">
+	<center><h2>Blood Pressure</h2></center>
+    <Center><input class="area"  type="text" id="uibloodpressure" class="floatLabel" name="Squareft" value="0" placeholder="Enter Value"></Center>
+	<center><h2>Skin Thickness</h2></center>
+	<Center><input class="area"  type="text" id="uiskinthickness" class="floatLabel" name="Squareft" value="0" placeholder="Enter Value"></Center>
+	<center><h2>Insulin</h2></center>
+	<Center><input class="area"  type="text" id="uiinsulin" class="floatLabel" name="Squareft" value="0" placeholder="Enter Value"></Center>
+	<center><h2>BMI</h2></center>
+	<Center><input class="area"  type="text" id="uibmi" class="floatLabel" name="Squareft" value="0" placeholder="Enter Value"></Center>
+	<center><h2>Diabetes Pedigree Function</h2></center>
+	<Center><input class="area"  type="text" id="uiDPF" class="floatLabel" name="Squareft" value="0" placeholder="Enter Value"></Center>
+	<center><h2>Age</h2></center>
+	<Center><input class="area"  type="text" id="uiage" class="floatLabel" name="Squareft" value="0" placeholder="Enter Value"></Center>
+
+	<center><button class="submit" onclick="onClickedPrediction()" type="button">Predict</button></center>
+	<center><div id="uiPrediction" class="result">	<h2></h2> </div></center>
+
+	<br>
+	<br>
+	<br>
+	<br>
+
+</body>
+</html>
