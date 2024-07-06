@@ -3,19 +3,20 @@ import util
 
 app = Flask(__name__)
 
-@app.route('/predict_diabetes', methods=['GET', 'POST'])
+@app.route('/predict_cervical_cancer', methods=['GET', 'POST'])
 def predict_home_price():
-    Pregnancies = float(request.form['t_Pregnancies'])
-    Glucose = float(request.form['t_Glucose'])
-    BloodPressure = float(request.form['t_BloodPressure'])
-    SkinThickness = float(request.form['t_SkinThickness'])
-    Insulin = float(request.form['t_Insulin'])
-    BMI = float(request.form['t_BMI'])
-    DiabetesPedigreeFunction = float(request.form['t_DiabetesPedigreeFunction'])
-    Age = float(request.form['t_Age'])
+
+
+    age = float(request.form['uiage'])
+    no_sex_partners = float(request.form['uino_sex_partners'])
+    first_sex_intercourse = float(request.form['uifirst_sex_intercourse'])
+    no_pregnancies = float(request.form['uino_pregnancies'])
+    smokes = float(request.form['uismokes'])
+    smokes_year = float(request.form['uismokes_year'])
+
 
     response = jsonify({
-        'prediction': int(util.get_est_prediction(Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age)[0])
+        'prediction': int(util.get_est_prediction(age,no_sex_partners,first_sex_intercourse,no_pregnancies,smokes,smokes_year)[0])
     })
     response.headers.add('Access-Control-Allow-Origin', '*')
 
